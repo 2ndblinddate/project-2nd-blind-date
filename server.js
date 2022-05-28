@@ -1,30 +1,25 @@
-const express = require('express');
-//const session = require('express-session');
-const sequelize = require('./config/connection');
-const controllers = require('./controllers');
-// const Sequelizestore = require('connect-session-sequelize')(session.store);
 
+const express = require('express');
+const routes = require('./controllers');
+const sequelize = require('./config/connection');
 
 const app = express();
- const PORT = process.env.PORT || 3000;
-// const sess = {
-//     secret: 'secretkey', 
-//     cookie: {},
-//     resave: false,
-//     saveUnintialize: true,
-//     store: new Sequelizestore({
-//        db: sequelize 
-//     })
+const PORT = process.env.PORT || 3001;
 
-// }
-// app.use(session(sess));
 app.use(express.json());
-app.use(express.urlencoded({extended: true}));
-//app.use(express.static('public'));
-app.use(controllers);
+app.use(express.urlencoded({ extended: true}));
 
+// turn on routes
+app.use(routes);
+
+// // turn on connection to db and server
+// sequelize.sync({ force: false }).then(() => {
+//   app.listen(PORT, () => console.log('Now listening'));
+// });
 app.listen(PORT,() => {
     console.log(`Listening on PORT: http://localhost:${PORT}`);  
     sequelize.sync({force: false})
 });
-
+// sequelize.sync({ force: false }).then(() => {
+//     app.listen(PORT, () => console.log('Now listening'));
+//   });
