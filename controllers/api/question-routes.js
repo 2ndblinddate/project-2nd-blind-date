@@ -45,9 +45,49 @@ router.post("/", (req, res) => {
 });
 
 // change a question
-// router.put();
+router.put("/:id", (req, res) => {
+  // expects => {"question": "this is a question"}
+  Question.update(req.body, {
+    individualHooks: true,
+    where: {
+      id: req.params.id,
+    },
+  })
+    .then((dbUserData) => {
+      if (!dbUserData[0]) {
+        res
+          .status(404)
+          .json({ message: "No user question found with this id" });
+        return;
+      }
+      res.json(dbUserData);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
 
 // delete a question
-// router.delete();
+router.delete("/:id", (req, res) => {
+  Question.destroy({
+    where: {
+      id: req.params.id,
+    },
+  })
+    .then((dbUserData) => {
+      if (!dbUserData) {
+        res
+          .status(404)
+          .json({ message: "No user question found with this id" });
+        return;
+      }
+      res.json(dbUserData);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
 
 module.exports = router;
