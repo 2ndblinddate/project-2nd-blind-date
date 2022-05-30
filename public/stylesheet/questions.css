@@ -1,57 +1,68 @@
-/*General styles*/
 *{
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    --website-name: 'Prata', serif;
-    --titles: 'Lobster Two', cursive;
-    --general: 'Khula', sans-serif;
 }
 
 body{
-    background-color: rgb(170, 170, 170);
     font-style: var(--general);
-
-    
+    background: url(/assets/imgs/backgroundBlurred.png) no-repeat center center fixed; 
 }
 /*Containers*/
 .wrapper{
     height: 100vh;
     display: flex;
-    background-color: #333;
     justify-content: center;
     align-items: center;
 }
-/* Split the screen in half */
+
 .split {
+    width: 100%;
     height: 100%;
-    width: 50%;
+    background-color: rgb(46, 46, 46, 0.1);
     position: fixed;
     z-index: 1;
     top: 0;
+    left: 0;
     overflow-x: hidden;
 }
-  /* Control the left side */
-.left {
-    left: 0;
-    background-color: #111;
-    height: 100%;
+
+
+#link-page{
+    padding-top: 80px;
 }
 
-.centered-img{
-    background-image: url(/assets/imgs/hero.photo.jpg);
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  
-  /* Control the right side */
-.right {
-    right: 0;
+#link-page a{
+    text-decoration: none;
+    color: #fff;
+    background: linear-gradient(to right, #eb2249, #f45c43);
+    padding: 7px 17px;
+    border-radius: 10px;
+}
+
+#link-page a:hover{
+    background: linear-gradient(to right, #f1375c, #ef6e5a);
+}
+
+
+.centered{
+    z-index: 2;
+}
+.main {
+    left: 0;
     color: #fff;
     text-align: center;
-    background-color: black
+    z-index: 2;
+    background-color: rgba(255, 255, 255, .15);  
+    backdrop-filter: blur(5px);
+    border-radius: 25px;
+    width: 700px;
+    height: 600px;
+}
+
+.right:before{
+    box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+    filter: blur(10px);
 }
 
 .sub-title h2{
@@ -67,19 +78,18 @@ body{
 
 /*Form*/
 .title img{
-    padding-top: 50px;
+    padding-top: 20px;
     width: 100px;
 }
 .title h1{
     padding-top: 20px;
     padding-bottom: 20px;
     letter-spacing: 10px;
-    color: #CB2926;
+    color: #000000;
 }
 
 .form-box{
     color: #fff;
-    margin: 10% 20%;
 }
 
 .form-box input[type="email"], input[type="password"],input[type="text"] {
@@ -89,28 +99,33 @@ body{
     padding-top: 20px;
     font-size: 14px;
     outline: none;
+   color: #fff;
+}
+
+::placeholder {
     color: #fff;
+    opacity: 0.7;
 }
 
 .form-input:active{
-    background:#000;
+    background-color: transparent;
     color: #fff'
-  }
+}
 /*Button*/
-#login-submit{
+#proceed-btn{
     padding-top: 40px;
 }
-#login{
+#proceed{
     background-color: transparent;
-    border: #CB2926 1px solid;
+    border: #000000 1px solid;
     border-radius: 50px;
-    color: #CB2926;
+    color: #000000;
     font-size: 17px;
     padding: 5px 25px;
 }
 
-#login:hover{
-    background-color: #CB2926;
+#proceed:hover{
+    background-color: #000000;
     color: #fff;
     cursor: pointer;
 }
@@ -167,4 +182,35 @@ body{
     }
   }
 
+.hide{
+    display: none;
+}
+
+.choices{
+    display: grid;
+    height: 200px;
+    grid-template-columns: 40% 40%;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 20px;
+    padding-top: 6px;
+}
+
+.choices button{
+    background: linear-gradient(to right, #eb2249, #f45c43);
+    border: none;
+    padding: 4px 12px;
+    color: #fff;
+    font-size: 17px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.questions-title{
+    font-family: 'Prata', serif;
+}
+
+.choices button:hover{
+    background: linear-gradient(to right, #f1375c, #ef6e5a);
+}
 

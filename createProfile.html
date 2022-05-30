@@ -4,9 +4,73 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./public/stylesheet/questions.css">
+    <link rel="icon" type="image/x-icon" href="./assets/imgs/logo.sbd.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Khula:wght@300&family=Prata&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>Second Blind Date</title>
 </head>
 <body>
-    
+    <div class="wrapper">
+        <section class="split left">
+            <div class="centered centered-img">
+            </div>
+        </section>
+
+        <section class="main">
+            <div class="centerd">
+                <!--Title-->
+                <div class="title">
+                    <img src="./assets/imgs/logo.sbd.png">
+                    <h1>Second Blind Date</h1>
+                </div>
+                <!--Form-->
+                <div class="form-box">
+                    <div class="sub-title">
+                        <h2 class="h2">Create Profile</h2>
+                        <h3 class="info-p">Provide the information below in order to proceed to the first date questions.</h3>
+                    </div>
+                    <div class="hide link-page" id="link-page">
+                        <a href="/index.html">Go to app</a>
+                    </div>
+
+                            <!--Hidden Questions container-->
+                    <section id="questions-container" class="hide"> 
+                        <h2 class="question-title"></h2>
+                        <div id="questionsChoices" class="choices">
+                        </div> 
+                    </section>
+                    <div class="form-box">
+                            <form id="form">
+                                <div>
+                                    <input type="text" class="form-input"  placeholder="First Name">
+                                </div>
+                                <div>
+                                    <input type="text" class="form-input"  placeholder="Last Name">
+                                </div>
+                                <div>
+                                    <input type="text" class="form-input"  placeholder="Age">
+                                </div>
+                                <div>
+                                    <input type="text" class="form-input"  placeholder="Gender">
+                                </div>
+                                <div>
+                                    <input type="text" class="form-input"  placeholder="Sexual Orientation(optional)">
+                                </div>
+                            </form>
+                            <div id="proceed-btn">
+                                <input type="button" id="proceed" value="Proceed"/>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 </body>
+<script src="/public/javascript/login.js"></script>
+<script src="/public/javascript/questions.js"></script>
+
+
 </html>
