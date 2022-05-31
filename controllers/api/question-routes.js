@@ -75,14 +75,14 @@ router.delete("/:id", (req, res) => {
       id: req.params.id,
     },
   })
-    .then((dbUserData) => {
-      if (!dbUserData) {
+    .then((dbQuestionData) => {
+      if (!dbQuestionData) {
         res
           .status(404)
           .json({ message: "No user question found with this id" });
         return;
       }
-      res.json(dbUserData);
+      res.json(dbQuestionData);
     })
     .catch((err) => {
       console.log(err);
