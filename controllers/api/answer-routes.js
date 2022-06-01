@@ -1,15 +1,29 @@
 const router = require("express").Router();
-const { Answer } = require("../../models");
+const { Answer, User, Question } = require("../../models");
 
 // get all answers
 router.get("/", (req, res) => {
-  Answer.findAll()
+  Answer.findAll({
+    attributes: ['id', 'answer'],
+    include: [
+      {
+        model: User,
+        attributes: ['id', 'username']
+      },
+      {
+        model: Question,
+        attributes: ['id', 'question']
+      }
+    ]
+  })
     .then((dbAnswerData) => res.json(dbAnswerData))
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
 });
+
+// get answers by user ID
 
 // create a new answer
 router.post("/", (req, res) => {

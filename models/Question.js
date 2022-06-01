@@ -9,6 +9,10 @@ Question.init(
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
+      references: {
+        model: "user",
+        key: "id",
+      },
     },
     question: {
       type: DataTypes.STRING,
