@@ -15,151 +15,144 @@
 </head>
 <body>
     <!--Navbar-->
-    <nav id="nav">
-        <div class="title">
-            <h1>Second Blind Date</h1>
-            <img src="./assets/imgs/Logo.png">
-        </div>
-
-        <div class="links">
-            <ul>
-                <li><a href="./index.html">Explore</a></li>
-                <li><a href="#" class="current">My profile</a></li>
-                <li><a href="#">About us</a></li>
-            </ul>
-        </div>
-    </nav>
-
+    <div class="nav-wrapper">
+        <nav id="nav">
+            <div class="title">
+                <h1>Second Blind Date</h1>
+                <img src="./assets/imgs/Logo.png">
+            </div>
+    
+            <div class="links">
+                <ul>
+                    <li><a href="./index.html">Explore</a></li>
+                    <li><a href="#" class="current">My profile</a></li>
+                    <li><a href="#">About us</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    
     <!--Section title-->
-    <main >
+    <main id="profile-container" >
         <section class="section-title">
             <div>
-               <h1>My profile</h1>
-               <div class="basic-info">
-                   <h3>Username: <span></span></h3>
-                   <h3>Age: <span></span></h3>
-                   <h3>Gender: <span></span></h3>
-                   <h3>Sexual Orientation: <span></span></h3>
-               </div>
+                <div class="profile">
+                    <h1>My profile</h1>
+                    <img src="./assets/imgs/profilephoto.jpg">
+                    <div class="profile-bg">
+                    </div>
+                </div>
             </div>
         </section>
+
+
       <div class="questions-wrapper">
+        <div class="basic-info">
+            <h3>Username: <span>Jonathan456</span></h3>
+            <h3>Age: <span>23</span></h3>
+            <h3>Gender: <span>Male</span></h3>
+            <h3>Sexual Orientation: <span>Heterosexual</span></h3>
+        </div>
         <section id="questions"class="questions-container">
 
             <!--Question1-->
             <div class="question-box">
                 <h3>What do you most love to do in your free time?</h3>
-                <input type="text" class="input-question" id="question-1"/>
-                <!--Buttons-->
-                <div class="btn-box">
-                    <button id="delete-btn" class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button>
-                    <button id="delete-btn" class="save-btn hide"><i class="fa-solid fa-floppy-disk"></i></button>
+                <div class="question-btn">
+                    <input type="text" class="input-question" id="question-1"/>
+                <button id="edit-btn" class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button>
                 </div>
             </div>
 
             <!--Question2-->
             <div class="question-box">
                 <h3>What do you most love to do in your free time?</h3>
-                <input type="text" class="input-question" id="question-"/>
-                <!--Buttons-->
-                <div class="btn-box">
-                    <button id="delete-btn" class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button>
-                    <button id="delete-btn" class="save-btn hide"><i class="fa-solid fa-floppy-disk"></i></button>
+                <div class="question-btn">
+                    <input type="text" class="input-question" id="question-2"/>
+                <button id="edit-btn" class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button>
                 </div>
             </div>
 
             <!--Question3-->
             <div class="question-box">
                 <h3 class="question-title">What is your favorite music genre?</h3>
-                <input type="text" class="input-question" id="question-3"/>
-                <!--Buttons-->
-                <div class="btn-box">
-                    <button id="delete-btn" class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button>
-                    <button id="delete-btn" class="save-btn hide"><i class="fa-solid fa-floppy-disk"></i></button>
+                <div class="question-btn">
+                    <input type="text" class="input-question" id="question-3"/>
+                <button id="edit-btn" class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button>
                 </div>
             </div>
 
             <!--Question4-->
             <div class="question-box">
                 <h3 class="question-title">What is a BIG NO on the first date?</h3>
-                <input type="text" class="input-question" id="question-4"/>
-                <!--Buttons-->
-                <div class="btn-box">
-                    <button id="delete-btn" class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button>
-                    <button id="delete-btn" class="save-btn hide"><i class="fa-solid fa-floppy-disk"></i></button>
+                <div class="question-btn">
+                    <input type="text" class="input-question" id="question-4"/>
+                <button id="edit-btn" class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button>
                 </div>
             </div>
 
             <!--Question5-->
             <div class="question-box">
                 <h3 class="question-title">What is one activity that you would like to do on a date?</h3>
-                <input type="text" class="input-question" id="question-5"/>
-                <!--Buttons-->
-                <div class="btn-box">
-                    <button id="delete-btn" class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button>
-                    <button id="delete-btn" class="save-btn hide"><i class="fa-solid fa-floppy-disk"></i></button>
+                <div class="question-btn">
+                    <input type="text" class="input-question" id="question-5"/>
+                <button id="edit-btn" class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button>
                 </div>
             </div>
 
             <!--Question6-->
             <div class="question-box">
                 <h3 class="question-title">How do you define your personality?</h3>
-                <input type="text" class="input-question" id="question-6"/>
-                <!--Buttons-->
-                <div class="btn-box">
-                    <button id="delete-btn" class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button>
-                    <button id="delete-btn" class="save-btn hide"><i class="fa-solid fa-floppy-disk"></i></button>
+                <div class="question-btn">
+                    <input type="text" class="input-question" id="question-6"/>
+                <button id="edit-btn" class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button>
                 </div>
             </div>
 
             <!--Question7-->
             <div class="question-box">
                 <h3 class="question-title">What is your sign?</h3>
-                <input type="text" class="input-question" id="question-7"/>
-                <!--Buttons-->
-                <div class="btn-box">
-                    <button id="delete-btn" class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button>
-                    <button id="delete-btn" class="save-btn hide"><i class="fa-solid fa-floppy-disk"></i></button>
+                <div class="question-btn">
+                    <input type="text" class="input-question" id="question-7"/>
+                <button id="edit-btn" class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button>
                 </div>
             </div>
 
             <!--Question8-->
             <div class="question-box">
                 <h3 class="question-title">What is your favorite movie genre?</h3>
-                <input type="text" class="input-question" id="question-8"/>
-                <!--Buttons-->
-                <div class="btn-box">
-                    <button id="delete-btn" class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button>
-                    <button id="delete-btn" class="save-btn hide"><i class="fa-solid fa-floppy-disk"></i></button>
+                <div class="question-btn">
+                    <input type="text" class="input-question" id="question-8"/>
+                <button id="edit-btn" class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button>
                 </div>
             </div>
 
             <!--Question9-->
             <div class="question-box">
                 <h3 class="question-title">What is your best quality?</h3>
-                <input type="text" class="input-question" id="question-9"/>
-                <!--Buttons-->
-                <div class="btn-box">
-                    <button id="delete-btn" class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button>
-                    <button id="delete-btn" class="save-btn hide"><i class="fa-solid fa-floppy-disk"></i></button>
+                <div class="question-btn">
+                    <input type="text" class="input-question" id="question-9"/>
+                <button id="edit-btn" class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button>
                 </div>
             </div>
 
             <!--Question10-->
             <div class="question-box">
                 <h3 class="question-title">What are you looking for in someone?</h3>
-                <input type="text" class="input-question" id="question-10"/>
-                <!--Buttons-->
-                <div class="btn-box">
-                    <button id="delete-btn" class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button>
-                    <button id="delete-btn" class="save-btn hide"><i class="fa-solid fa-floppy-disk"></i></button>
+                <div class="question-btn">
+                    <input type="text" class="input-question" id="question-10"/>
+                    <button id="edit-btn" class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button>
                 </div>
             </div>
         </section>
+        <div id="save-btn-container">
+            <button id="save-btn" class="save-btn">Save</button>
+        </div>
       </div>
         
     </main>
 </body>
 <script src="/public/javascript/login.js"></script>
+<script src="/public/javascript/profile.js"></script>
 <script src="https://kit.fontawesome.com/2d9e8320eb.js" crossorigin="anonymous"></script>
 </html>
