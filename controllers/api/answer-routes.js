@@ -23,8 +23,6 @@ router.get("/", (req, res) => {
     });
 });
 
-// get answers by user ID
-
 // create a new answer
 router.post("/", (req, res) => {
   // expects => {"user_id": 1, "question_id": 1, "answer": "answer text"}
