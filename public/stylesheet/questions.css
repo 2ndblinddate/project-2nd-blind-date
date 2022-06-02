@@ -109,7 +109,7 @@ body{
 
 .form-input:active{
     background-color: transparent;
-    color: #fff'
+    color: #fff;
 }
 /*Button*/
 #proceed-btn{
