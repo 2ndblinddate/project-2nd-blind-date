@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./public/stylesheet/style.css">
     <link rel="stylesheet" href="./public/stylesheet/myProfile.css">
+    <link rel="stylesheet" href="./public/stylesheet/users.css">
     <link rel="icon" type="image/x-icon" href="./assets/imgs/logo.sbd.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,8 +26,8 @@
             <div class="links">
                 <ul>
                     <li><a href="./index.html">Explore</a></li>
-                    <li><a href="#" class="current">My profile</a></li>
-                    <li><a href="#">Matches</a></li>
+                    <li><a href="#">My profile</a></li>
+                    <li><a href="#">About us</a></li>
                 </ul>
             </div>
         </nav>
@@ -37,8 +38,12 @@
         <section class="section-title">
             <div>
                 <div class="profile">
-                    <h1>My profile</h1>
+                    <h1>Sarahlohan12</h1>
+
                     <img src="./assets/imgs/profilephoto.jpg">
+                    <div class="match-container">
+                        <button id="match-btn" class="match-btn"><i class="fa-solid fa-heart" id="heart-i"></i></button>
+                    </div>
                     <div class="profile-bg">
                     </div>
                 </div>
@@ -48,29 +53,21 @@
 
       <div class="questions-wrapper">
         <div class="basic-info">
-            <h3>Username: <span>Jonathan456</span></h3>
+            <h3>Username: <span>Sarahlohan12</span></h3>
             <h3>Age: <span>23</span></h3>
-            <h3>Gender: <span>Male</span></h3>
-            <h3>Sexual Orientation: <span>Heterosexual</span></h3>
+            <h3>Gender: <span>Female</span></h3>
+            <h3>Sexual Orientation: <span>Bisexual</span></h3>
         </div>
-        <p class="hiden p-title">Answer to the 10 most asked questions in a first date in order to complete your profile</p>
         <div class="cont">
-            <!--First impression phrase-->
-            <div class="question-box phrase">
-                <h3 class="question-title">First impression phrase that other users will see:</h3>
-                <div class="question-btn">
-                    <input type="text" class="input-question" id="question-11"/>
-                    <button id="edit-btn11" class="edit-btn hide"><i class="fa-solid fa-pen-to-square"></i></button>
-                </div>
-            </div>
             <section id="questions"class="questions-container">
 
                 <!--Question1-->
                 <div class="question-box">
                     <h3>What do you most love to do in your free time?</h3>
                     <div class="question-btn">
-                        <input type="text" class="input-question" id="question-1"/>
-                    <button id="edit-btn1" class="edit-btn hide"><i class="fa-solid fa-pen-to-square"></i></button>
+                        <div class="answer-container">
+                            <p class="answer">I like to go to the park and watch movies on Netflix</p>
+                        </div>
                     </div>
                 </div>
     
@@ -78,8 +75,9 @@
                 <div class="question-box">
                     <h3>"What are your favourite TV shows?"</h3>
                     <div class="question-btn">
-                        <input type="text" class="input-question" id="question-2"/>
-                    <button id="edit-btn2" class="edit-btn hide"><i class="fa-solid fa-pen-to-square"></i></button>
+                        <div class="answer-container">
+                            <p class="answer">Game of Thrones, Stranger Things and Grey's Anatomy</p>
+                        </div>
                     </div>
                 </div>
     
@@ -87,8 +85,9 @@
                 <div class="question-box">
                     <h3 class="question-title">What is your favorite music genre?</h3>
                     <div class="question-btn">
-                        <input type="text" class="input-question" id="question-3"/>
-                    <button id="edit-btn3" class="edit-btn hide"><i class="fa-solid fa-pen-to-square"></i></button>
+                        <div class="answer-container">
+                            <p class="answer">Pop and rock</p>
+                        </div>
                     </div>
                 </div>
     
@@ -96,8 +95,9 @@
                 <div class="question-box">
                     <h3 class="question-title">What is a BIG NO on the first date?</h3>
                     <div class="question-btn">
-                        <input type="text" class="input-question" id="question-4"/>
-                    <button id="edit-btn4" class="edit-btn hide"><i class="fa-solid fa-pen-to-square"></i></button>
+                        <div class="answer-container">
+                            <p class="answer">Talk about an ex partner</p>
+                        </div>
                     </div>
                 </div>
     
@@ -105,8 +105,9 @@
                 <div class="question-box">
                     <h3 class="question-title">What is one activity that you would like to do on a date?</h3>
                     <div class="question-btn">
-                        <input type="text" class="input-question" id="question-5"/>
-                    <button id="edit-btn5" class="edit-btn hide"><i class="fa-solid fa-pen-to-square"></i></button>
+                        <div class="answer-container">
+                            <p class="answer">I would love to have dinner and go to an arcade</p>
+                        </div>
                     </div>
                 </div>
     
@@ -114,8 +115,9 @@
                 <div class="question-box">
                     <h3 class="question-title">How do you define your personality?</h3>
                     <div class="question-btn">
-                        <input type="text" class="input-question" id="question-6"/>
-                    <button id="edit-btn6" class="edit-btn hide"><i class="fa-solid fa-pen-to-square"></i></button>
+                        <div class="answer-container">
+                            <p class="answer">Kind and respectful</p>
+                        </div>
                     </div>
                 </div>
     
@@ -123,17 +125,19 @@
                 <div class="question-box">
                     <h3 class="question-title">What is your sign?</h3>
                     <div class="question-btn">
-                        <input type="text" class="input-question" id="question-7"/>
-                    <button id="edit-btn7" class="edit-btn hide"><i class="fa-solid fa-pen-to-square"></i></button>
+                        <div class="answer-container">
+                            <p class="answer">Aries</p>
+                        </div>
                     </div>
                 </div>
     
                 <!--Question8-->
                 <div class="question-box">
-                    <h3 class="question-title">What is your current occupation?</h3>
+                    <h3 class="question-title">What's your current occupation?</h3>
                     <div class="question-btn">
-                        <input type="text" class="input-question" id="question-8"/>
-                    <button id="edit-btn8" class="edit-btn hide"><i class="fa-solid fa-pen-to-square"></i></button>
+                        <div class="answer-container">
+                            <p class="answer">Server</p>
+                        </div>
                     </div>
                 </div>
     
@@ -141,8 +145,9 @@
                 <div class="question-box">
                     <h3 class="question-title">What is your best quality?</h3>
                     <div class="question-btn">
-                        <input type="text" class="input-question" id="question-9"/>
-                    <button id="edit-btn9" class="edit-btn hide"><i class="fa-solid fa-pen-to-square"></i></button>
+                        <div class="answer-container">
+                            <p class="answer">I am 100% loyal to the people I love</p>
+                        </div>
                     </div>
                 </div>
     
@@ -150,20 +155,19 @@
                 <div class="question-box">
                     <h3 class="question-title">"What are you looking for in a relationship?</h3>
                     <div class="question-btn">
-                        <input type="text" class="input-question" id="question-10"/>
-                        <button id="edit-btn10" class="edit-btn hide"><i class="fa-solid fa-pen-to-square"></i></button>
+                        <div class="answer-container">
+                            <p class="answer">I want a closed relationship</p>
+                        </div>
                     </div>
                 </div>
             </section>
-            <div id="save-btn-container">
-                <button  id="save-btn" class="save-btn" >Save</button>
-            </div>
         </div>
       </div>
         
     </main>
 </body>
 <script src="/public/javascript/login.js"></script>
+<script src="/public/javascript/users.js"></script>
 <script src="/public/javascript/profile.js"></script>
 <script src="https://kit.fontawesome.com/2d9e8320eb.js" crossorigin="anonymous"></script>
 </html>
