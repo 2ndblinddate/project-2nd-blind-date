@@ -33,15 +33,21 @@ router.get("/:id", (req, res) => {
 });
 
 router.post("/", (req, res) => {
-  // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
+  // expects { email: 'lernantino@gmail.com', password: 'password1234'}
   User.create({
 
     email: req.body.email,
     password: req.body.password,
   })
     .then((dbUserInfo) => {
+      req.session.save(() => {
+        req.session.user = dbUserInfo.id;
+        req.session.email= dbUserInfo.email;
+        req.session.loggedIn = true;
+    
       res.json(dbUserInfo);
-    })
+    });
+  })
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
@@ -66,12 +72,19 @@ router.post("/login", (req, res) => {
       res.status(400).json({ message: "Incorrect password!" });
       return;
     }
+    req.session.save(() => {
+      // declare session variables
+      req.session.user = dbUserInfo.id;
+      req.session.email = dbUserInfo.email;
+      req.session.loggedIn = true;
+
 console.log('success');
     res.json({ user: dbUserInfo, message: "You are now logged in!" });
   });
 });
+});
 router.put("/:id", (req, res) => {
-  // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
+  // expects { email: 'lernantino@gmail.com', password: 'password1234'}
 
   // pass in req.body instead to only update what's passed through
   User.update(req.body, {
@@ -111,5 +124,15 @@ router.delete("/:id", (req, res) => {
       res.status(500).json(err);
     });
 });
+router.post('/logout', (req,res)=> {
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  }
+  else {
+    res.status(404).end();
+  }
 
+});
 module.exports = router;
