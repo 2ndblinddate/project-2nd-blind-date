@@ -97,7 +97,10 @@ body{
     justify-content: center;
     align-items: center;
     padding-top: 30px;
-    padding-bottom: 150px;
+    padding-bottom: 80px;
+}
+
+.cont{
     background-color: rgba(255, 255, 255, .15);  
     backdrop-filter: blur(5px);
     width: 90%;
@@ -113,7 +116,34 @@ body{
     display: flex;
 }
 
-#edit-btn{
+
+
+
+.save-btn{
+    padding: 6px 40px;
+    font-size: 15px;
+    letter-spacing: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #eb2249, #f45c43);
+}
+
+.save-btn:hover{
+    background: linear-gradient(to right, #f1375c, #ef6e5a);
+}
+
+
+#save-btn-container{
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+#edit-btn1, #edit-btn2 , #edit-btn3, #edit-btn4, #edit-btn5,
+#edit-btn6,#edit-btn7,#edit-btn8,#edit-btn9, #edit-btn10  {
     background-color: rgb(26, 26, 26);
     border: none;
     color: #fff;
@@ -121,9 +151,16 @@ body{
     cursor: pointer;
 }
 
-#save-btn-container{
-    background-color: red;
-   
+.hide{
+    display: none;
+}
+
+.p-title{
+    color: #f3365c;
+    font-family: 'Berkshire Swash', cursive;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 20px;
 }
 
 @media (max-width: 913px){
@@ -137,3 +174,4 @@ body{
     }
         
 }
+

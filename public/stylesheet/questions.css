@@ -182,9 +182,7 @@ body{
     }
   }
 
-.hide{
-    display: none;
-}
+
 
 .choices{
     display: grid;
@@ -212,5 +210,9 @@ body{
 
 .choices button:hover{
     background: linear-gradient(to right, #f1375c, #ef6e5a);
+}
+
+.hide{
+    display: none;
 }
 
