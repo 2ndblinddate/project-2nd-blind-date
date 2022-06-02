@@ -207,7 +207,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 20px
+    padding-bottom: 20px;
 }
 
 .user-name{
@@ -264,16 +264,19 @@ body{
         display: none;
     }
 
+   
     #nav{
         display: block;
         padding: 0;
         margin: 0;
         border: none;
+        height: 100px;
     }
 
-    .section-title{
-        padding-top: 20%;
+    #nav ul{
+        padding-top: 8px;
     }
+
 
     .boxes{
         width: 60%;
@@ -287,20 +290,18 @@ body{
     }
     
     .user-name{
-        font-size: 25px;
+        font-size: 20px;
         font-family: 'M PLUS 1p', sans-serif;
     }
     
     .user-info p{
-        font-size: 20px;
+        font-size: 17px;
         color: rgb(176, 176, 176);
         padding-left: 5px;
     }
     
-    .user-phrase{
-        font-size: 20px;
-        border-top: 1px gray solid;;
-        border-bottom: 1px gray solid;;
+    .user-phrase p{
+        font-size: 15px;
     }
 
     .title{
@@ -312,6 +313,9 @@ body{
         margin: 0 auto;
     }
 
+    .search-form{
+        margin-top: 40px;
+    }
 
     .links{
         width: 100%;
@@ -337,13 +341,17 @@ body{
         padding-top: 5%;
     }
 
-    #search-container h2, p{
-        display: none;
-    }
-
     .questions-container{
         display: flex;
        flex-direction: column;
+    }
+
+    .sub-title{
+        display: none;
+    }
+
+    .search-title{
+        display: none;
     }
   }
 

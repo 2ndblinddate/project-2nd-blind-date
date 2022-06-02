@@ -41,3 +41,47 @@
     color: #333;
     display: block;
 }
+
+@media (max-width: 913px){
+    .questions-container{
+        display: grid;
+       grid-template-columns: 80%;
+    }
+
+    .section-title{
+        padding-top: 20%;
+    }
+
+    .profile img{
+        width: 100px;
+    }
+
+    .profile-bg{
+        transform: translate(0, -100px);
+        border-radius: 60px;
+    }
+
+    .questions-wrapper{
+        transform: translate(0, -250px);
+        border-radius: 50px ;
+    }
+
+    .basic-info{
+        padding-top: 20px;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .basic-info h3{
+        font-size: 15px;
+    }
+
+    .answer{
+        font-size: 13px;
+    }
+        
+    
+}
+
