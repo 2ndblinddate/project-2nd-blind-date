@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User } = require("../../models");
+const { User, Answer } = require("../../models");
 
 router.get("/", (req, res) => {
   User.findAll({
@@ -15,6 +15,12 @@ router.get("/", (req, res) => {
 router.get("/:id", (req, res) => {
   User.findOne({
     attributes: { exclude: ["password"] },
+    include: [
+      {
+        model: Answer,
+        attributes:['id', 'question_id', 'answer']
+      }
+    ],
     where: {
       id: req.params.id,
     },
@@ -55,7 +61,6 @@ router.post("/", (req, res) => {
 });
 
 router.post("/login", (req, res) => {
-  // expects {email: 'lernantino@gmail.com', password: 'password1234'}
   User.findOne({
     where: {
       email: req.body.email,
@@ -86,7 +91,6 @@ console.log('success');
 router.put("/:id", (req, res) => {
   // expects { email: 'lernantino@gmail.com', password: 'password1234'}
 
-  // pass in req.body instead to only update what's passed through
   User.update(req.body, {
     individualHooks: true,
     where: {
