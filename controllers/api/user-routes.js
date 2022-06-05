@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User, Answer } = require("../../models");
+const { User, Answer, Match } = require("../../models");
 
 router.get("/", (req, res) => {
   User.findAll({
@@ -19,6 +19,10 @@ router.get("/:id", (req, res) => {
       {
         model: Answer,
         attributes:['id', 'question_id', 'answer']
+      },
+      {
+        model: Match,
+        attributes:['user_match']
       }
     ],
     where: {
@@ -39,7 +43,6 @@ router.get("/:id", (req, res) => {
 });
 
 router.post("/", (req, res) => {
-  // expects { email: 'lernantino@gmail.com', password: 'password1234'}
   User.create({
 
     email: req.body.email,
@@ -89,7 +92,6 @@ console.log('success');
 });
 });
 router.put("/:id", (req, res) => {
-  // expects { email: 'lernantino@gmail.com', password: 'password1234'}
 
   User.update(req.body, {
     individualHooks: true,
