@@ -3,19 +3,7 @@ const { Answer, User, Question } = require("../../models");
 
 // get all answers
 router.get("/", (req, res) => {
-  Answer.findAll({
-    attributes: ['id', 'answer'],
-    include: [
-      {
-        model: User,
-        attributes: ['id', 'username']
-      },
-      {
-        model: Question,
-        attributes: ['id', 'question']
-      }
-    ]
-  })
+  Answer.findAll()
     .then((dbAnswerData) => res.json(dbAnswerData))
     .catch((err) => {
       console.log(err);
