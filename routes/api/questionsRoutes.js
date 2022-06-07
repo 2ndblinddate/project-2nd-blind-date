@@ -1,4 +1,12 @@
 const router = require('express').Router();
-const { Questions, Answers, Match } = require('../../models');
+const { Question } = require('../../models');
 
-router.get()
+router.get('/', async(req, res) => {
+    try {
+        const questionData = await Question.findAll({  
+        });
+        res.status(200).json(questionData);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+})

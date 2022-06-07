@@ -18,7 +18,7 @@ router.get('/:id', async(req, res) => {
             include: [{ model: Question}, { model: Answer}, { model: Match}]
         });
         if (!userData) {
-            res.status(404).json({ message: 'No user is found with that id.'});
+            res.status(404).json({ message: 'User not found'});
             return;
         }
         res.status(200).json(userData);
