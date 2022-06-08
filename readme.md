@@ -15,11 +15,11 @@ First users have to sign up for an account. Then it will bring users to the logi
 The users have option to cross out or continue with their match. 
 
 ## Installations
-jQuery
-Express.js
-MySQL
-Bcrypt
-Sequelize
+* jQuery
+* Express.js
+* MySQL
+* Bcrypt
+* Sequelize
 
 
 ## Documentation
@@ -27,11 +27,11 @@ Project proposal and Powerpoint Presentation can be found in the Documentation f
 
 
 ## Contributes
-Lucca Almeida
-Eric Smith
-Orindrila Talukder
-Luiz Paulo
-Anna Liang
+* Lucca Almeida
+* Eric Smith
+* Orindrila Talukder
+* Luiz Paulo
+* Anna Liang
 
 ## License
 ISC
