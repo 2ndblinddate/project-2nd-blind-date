@@ -2,36 +2,34 @@ const { Question } = require("../models");
 
 const questionData = [
   {
-    question: "How do you spend you free time?",
+    question: "What do you most love to do in your free time",
   },
   {
-    question: "What is are some traits attracts you?",
+    question: "What is your favorite music genre",
   },
   {
-    question: "What type of music do you listen to?",
-  },
-  {
-    question: "Which of the following is a BIG NO on the first date?",
-  },
-  {
-    question: "What activity would you like to do on the first date?",
-  },
-  {
-    question: "How do you define your personality?",
+    question: "What is one activity that you would like to do on a date",
   },
   {
     question: "What is your sign?",
   },
   {
-    question:
-      "If the person wants to sleep with you on the first date, what would you do?",
+    question: "What is your best quality?",
   },
   {
-    question: "What movie genre do you like?",
+    question: "What are your favorite TV shows?",
   },
   {
-    question:
-      "would you want to date someone with that has the same value or differnt value as you?",
+    question: "What is a BIG NO on the first date?",
+  },
+  {
+    question: "How do you define your personality?",
+  },
+  {
+    question: "What is your current occupation?",
+  },
+  {
+    question: "What are you looking for in a relantionship?",
   },
 ];
 
