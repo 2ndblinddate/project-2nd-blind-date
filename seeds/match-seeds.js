@@ -21,4 +21,4 @@ const matchData = [
 
 const seedMatches = () => Match.bulkCreate(matchData);
 
-module.exports = seedMatches();
+module.exports = seedMatches;
