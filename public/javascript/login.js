@@ -1,8 +1,7 @@
 
-console.log('connected');
 async function loginFormHandler(event) {
     event.preventDefault();
-    console.log('connected2');
+    
     const email = document.querySelector('#email').value.trim();
     const password = document.querySelector('#password').value.trim();
     console.log('email','password')
@@ -17,9 +16,9 @@ async function loginFormHandler(event) {
       });
   
       if (response.ok) {
-        document.location.replace('/');
+        document.location.replace('/main');
       } else {
-        alert(response.statusText);
+        alert("Incorrect email/password!");
       }
     }
   }
