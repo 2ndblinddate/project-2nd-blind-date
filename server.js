@@ -23,7 +23,9 @@ app.use(session(sess));
 
 const hbs = exphbs.create({});
 
-app.engine('handlebars', hbs.engine);
+app.engine('handlebars', exphbs({
+  defaultLayout: 'index',
+}));
 app.set('view engine', 'handlebars');
 
 app.use(express.json());
@@ -33,5 +35,18 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(require('./controllers/'));
 
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening'));
+  app.listen(PORT, () => console.log(`Now listening on port ${PORT}!`));
 });
+
+
+const bodyParser = require('body-parser');
+
+// tests
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
+
+const port = 8900;
+app.listen(port);
+console.log(`listening to server ${port}`);
+
+//landing page

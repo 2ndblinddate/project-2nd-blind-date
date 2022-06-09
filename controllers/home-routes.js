@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { User } = require('../models');
+
+
  router.get('/', (req, res) => {
      console.log(req.session);
     User.findAll({
@@ -19,6 +21,9 @@ const { User } = require('../models');
         console.log(err);
         res.status(500).json(err);
       });
+      res.render('main', {
+        loggedIn: req.session.loggedIn
+    });
   });
 
   router.get('/login', (req, res) => {
