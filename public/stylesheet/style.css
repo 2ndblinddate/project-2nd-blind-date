@@ -64,11 +64,12 @@ body{
 /*Links*/
 
 .links{
-    padding-left: 30%;
-}
-.links li ul {
+    /* padding-left: 30%; */
     display: flex;
 }
+/* .links li ul {
+    display: flex;
+} */
 
 .links li{
     padding: 40px;
