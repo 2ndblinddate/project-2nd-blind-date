@@ -25,7 +25,6 @@ const { User } = require('../models');
       res.render('main', {
         loggedIn: req.session.loggedIn
     });
-=======
 //const { User } = require('../models');
  router.get('/', (req, res) => {
   
