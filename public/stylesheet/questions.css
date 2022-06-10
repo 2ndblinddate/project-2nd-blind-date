@@ -6,7 +6,7 @@
 
 body{
     font-style: var(--general);
-    background: url(/assets/imgs/backgroundBlurred.png) no-repeat center center fixed; 
+    background: url(/public/assets/imgs/backgroundBlurred.png) no-repeat center center fixed; 
 }
 /*Containers*/
 .wrapper{

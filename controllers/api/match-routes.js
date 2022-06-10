@@ -9,6 +9,7 @@ router.get("/", (req, res) => {
       console.log(err);
       res.status(500).json(err);
     });
+    res.render("matches");
 });
 
 // create a match
