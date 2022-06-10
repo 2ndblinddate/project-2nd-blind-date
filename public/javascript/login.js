@@ -16,7 +16,7 @@ async function loginFormHandler(event) {
       });
   
       if (response.ok) {
-        document.location.replace('/home');
+        document.location.replace('/myprofile');
       } else {
         alert("Incorrect email/password!");
       }

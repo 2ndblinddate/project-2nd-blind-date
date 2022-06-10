@@ -8,24 +8,18 @@ router.get('/', (req, res) => {
   
  
 });
-router.get('/home', (req, res) => {
-    Question.findAll({
+router.get('/myprofile', (req, res) => {
+    User.findAll({
         attributes: [
             'id',
-            'question',
+            'email',
         ],
-        include: [
-            {
-        
-                    model: Answer,
-                attributes: ['user_id', 'question_id', 'answer'],
-            }, 
-        ]
+    
     })
-    .then((dbQuestionData) => {
-        const questions = dbQuestionData.map(question => question.get({ plain: true}));
-        res.render('home', {
-            questions
+    .then((dbUserInfo) => {
+        const users = dbUserInfo.map(user => user.get({ plain: true}));
+        res.render('myprofile', {
+            users
         });
     }) 
     .catch((err) => {
@@ -36,7 +30,7 @@ router.get('/home', (req, res) => {
 });
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
-        res.redirect('/home');
+        res.redirect('/myprofile');
         return;
       }
     res.render('login');
@@ -45,5 +39,7 @@ router.get('/login', (req, res) => {
    
       res.render('signup')
   });
+
+
 
 module.exports = router;
