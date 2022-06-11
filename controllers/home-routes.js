@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-<<<<<<< HEAD
 const { User } = require('../models');
 
 
@@ -30,8 +29,7 @@ const { User } = require('../models');
   
         res.render('homepage' );
       
-     
->>>>>>> 2809ece587bc2847670d58f6bcc1b75e57533858
+    
   });
 
   router.get('/login', (req, res) => {
