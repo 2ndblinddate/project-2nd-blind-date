@@ -29,7 +29,7 @@ Project proposal and Powerpoint Presentation can be found in the Documentation f
 ## Contributes
 * Lucca Almeida
 * Eric Smith
-* Orindrila Talukder
+* Oindrila Talukder
 * Luiz Paulo
 * Anna Liang
 
