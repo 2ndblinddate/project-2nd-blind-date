@@ -38,7 +38,8 @@ Project proposal and Powerpoint Presentation can be found in the Documentation f
 
 
 ## Screenshot of Create profile
-![Create profile](https://user-images.githubusercontent.com/98847835/173214434-04179f53-77f1-4b85-9dc6-7b7e3364ae83.jpg)
+![Create profile](https://user-images.githubusercontent.com/98847835/173258906-739e431a-8e77-419e-b27a-2a1d286166f5.jpg)
+
 
 
 ## Screenshot of Questions
