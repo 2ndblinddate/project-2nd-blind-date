@@ -5,17 +5,17 @@ document.querySelector("#proceed-btn").addEventListener("click", async (evt) => 
     const username = document.querySelector('#username').value.trim();
     const age = document.querySelector('#age').value.trim();
     const gender = document.querySelector('#gender').value.trim();
-    const sexOrientation = document.querySelector('#sexOrientation').value.trim();
+    const sexual_orientation = document.querySelector('#sexOrientation').value.trim();
     const id = document.querySelector("#userId").value.trim();
 
-    if (username && age && gender && sexOrientation) {
+    if (username && age && gender && sexual_orientation) {
       const response = await fetch(`/api/users/${id}/updateProfile`, {
         method: 'post',
         body: JSON.stringify({
           username,
           age,
           gender,
-          sexOrientation
+          sexual_orientation,
         }),
         headers: { 'Content-Type': 'application/json' }
       });

@@ -13,7 +13,7 @@ router.get("/explore", async (req, res) => {
     });
 
     const users = dbUserInfo.map((user) => user.get({ plain: true }));
-    res.render("myprofile", {
+    res.render("home", {
       users,
     });
   } catch (err) {
@@ -34,7 +34,16 @@ router.get("/myprofile", async (req, res) => {
     },
   });
 
-  res.render("myprofile", { user: user.get({ plain: true }) });
+  const answers = await Answer.findAll({
+    where: {
+      user_id: req.session.user,
+    }
+  });
+
+  res.render("myprofile", {
+    user: user.get({ plain: true }),
+    answers: answers.map((answer) => answer.get({ plain: true })).sort((a, b) => a.question_id - b.question_id), 
+  });
 });
 
 router.get("/home", async (req, res) => {
@@ -59,7 +68,7 @@ router.get("/home", async (req, res) => {
     return;
   }
 
-  res.redirect("/myprofile");
+  res.redirect("/explore");
   return;
 });
 

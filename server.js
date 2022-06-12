@@ -41,6 +41,6 @@ const bodyParser = require("body-parser");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-sequelize.sync({ force: true }).then(() => {
+sequelize.sync({ force: false, alter: false, logging: false }).then(() => {
   app.listen(PORT, () => console.log(`Now listening on port ${PORT}!`));
 });

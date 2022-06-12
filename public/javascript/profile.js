@@ -1,76 +1,56 @@
-const profileTitle = document.querySelector(".p-title");
-const editBtn1 = document.querySelector("#edit-btn1");
-const editBtn2 = document.querySelector("#edit-btn2");
-const editBtn3 = document.querySelector("#edit-btn3");
-const editBtn4 = document.querySelector("#edit-btn4");
-const editBtn5 = document.querySelector("#edit-btn5");
-const editBtn6 = document.querySelector("#edit-btn6");
-const editBtn7 = document.querySelector("#edit-btn7");
-const editBtn8 = document.querySelector("#edit-btn8");
-const editBtn9 = document.querySelector("#edit-btn9");
-const editBtn10 = document.querySelector("#edit-btn10");
-const editBtn11 = document.querySelector("#edit-btn11");
-const saveBtn = document.querySelector("#save-btn");
+document.addEventListener('DOMContentLoaded', () => {
+    const profileTitle = document.querySelector(".p-title");
+    const saveBtn = document.querySelector("#save-btn");
 
-saveBtn.addEventListener("click", async (evt) => {
+    const editButtons = [];
+    const answerInputs = [];
 
-    evt.preventDefault();
+    for (let i = 0; i <= 10; i++) {
+        editButtons.push(document.querySelector(`#edit-btn${i + 1}`));
+        answerInputs.push(document.querySelector(`#question-${i + 1}`));
 
-    editBtn1.removeAttribute("class", "hide");
-    editBtn2.removeAttribute("class", "hide");
-    editBtn3.removeAttribute("class", "hide");
-    editBtn4.removeAttribute("class", "hide");
-    editBtn5.removeAttribute("class", "hide");
-    editBtn6.removeAttribute("class", "hide");
-    editBtn7.removeAttribute("class", "hide");
-    editBtn8.removeAttribute("class", "hide");
-    editBtn9.removeAttribute("class", "hide");
-    editBtn10.removeAttribute("class", "hide");
-    editBtn11.removeAttribute("class", "hide");
-    profileTitle.style.display ="none";
-    saveBtn.setAttribute("class", "hide");
-    
-    const id = document.querySelector("#userId").value.trim();
+        if (answerInputs[i].value.trim() === '') {
+            profileTitle.removeAttribute("hidden");
+        } else {
+            editButtons[i].removeAttribute('hidden');
+            answerInputs[i].setAttribute('disabled', '');
+        }
 
-    
-    const response = await fetch(`/api/users/${id}/updateAnswers`, {
-        method: 'post',
-        body: JSON.stringify([
-            document.querySelector('#question-1').value.trim(),
-            document.querySelector('#question-2').value.trim(),
-            document.querySelector('#question-3').value.trim(),
-            document.querySelector('#question-4').value.trim(),
-            document.querySelector('#question-5').value.trim(),
-            document.querySelector('#question-6').value.trim(),
-            document.querySelector('#question-7').value.trim(),
-            document.querySelector('#question-8').value.trim(),
-            document.querySelector('#question-9').value.trim(),
-            document.querySelector('#question-10').value.trim(),
-            document.querySelector('#question-11').value.trim()
-        ]),
-        headers: { 'Content-Type': 'application/json' }
-    });
-
-    if (response.ok) {
-        document.location.replace('/myprofile');
-    } else {
-        alert("error");
+        editButtons[i].addEventListener("click", () => {
+            saveBtn.removeAttribute("hidden");
+            answerInputs[i].removeAttribute('disabled');
+        });
     }
-})
 
-editBtn1.addEventListener("click", function(){
-    saveBtn.removeAttribute("class", "hide");
-    saveBtn.style.padding = "6px 40px";
-    saveBtn.style.backgroundImage = "linear-gradient(to right, #eb2249, #f45c43)";
-    saveBtn.style.fontSize = "15px";
-    saveBtn.style.borderRadius = "20px";
-    saveBtn.style.color = "#fff";
-    saveBtn.style.fontFamily = "'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif";
-    saveBtn.style.textTransform = "uppercase";
-    saveBtn.style.letterSpacing = "5px";
-    saveBtn.style.cursor = "pointer";
-   
-})
+
+    saveBtn.addEventListener("click", async (evt) => {
+        evt.preventDefault();
+
+        saveBtn.setAttribute('hidden', '');
+
+        for (const [i, input] of answerInputs.entries()) {
+            if (input.value.trim() !== '') {
+                editButtons[i].removeAttribute('hidden');
+                input.setAttribute('disabled', '');
+            }
+        }
+        
+        const id = document.querySelector("#userId").value.trim();
+        
+        const response = await fetch(`/api/users/${id}/updateAnswers`, {
+            method: 'post',
+            body: JSON.stringify(answerInputs.map((input) => input.value.trim())),
+            headers: { 'Content-Type': 'application/json' }
+        });
+
+        if (response.ok) {
+            document.location.replace('/myprofile');
+        } else {
+            alert("error");
+        }
+    });
+});
+
 
 
 //padding: 6px 40px;

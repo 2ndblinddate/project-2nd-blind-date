@@ -19,7 +19,7 @@
       <h3>Gender: <span> {{ user.gender }}</span></h3>
       <h3>Sexual Orientation: <span> {{ user.sexual_orientation }}</span></h3>
     </div>
-    <p class="hiden p-title">Answer to the 10 most asked questions in a first
+    <p class="p-title" hidden>Answer to the 10 most asked questions in a first
       date in order to complete your profile</p>
     <div class="cont">
       <!--First impression phrase-->
@@ -27,8 +27,8 @@
         <h3 class="question-title">First impression phrase that other users will
           see:</h3>
         <div class="question-btn">
-          <input type="text" class="input-question" id="question-11" />
-          <button id="edit-btn11" class="edit-btn hide"><i
+          <input type="text" class="input-question" id="question-11" value="{{ answers.[10].answer }}" />
+          <button id="edit-btn11" class="edit-btn" hidden><i
               class="fa-solid fa-pen-to-square"
             ></i></button>
         </div>
@@ -39,8 +39,8 @@
         <div class="question-box">
           <h3>What do you most love to do in your free time?</h3>
           <div class="question-btn">
-            <input type="text" class="input-question" id="question-1" />
-            <button id="edit-btn1" class="edit-btn hide"><i
+            <input type="text" class="input-question" id="question-1" value="{{ answers.[0].answer }}" />
+            <button id="edit-btn1" class="edit-btn" hidden><i
                 class="fa-solid fa-pen-to-square"
               ></i></button>
           </div>
@@ -50,8 +50,8 @@
         <div class="question-box">
           <h3>"What are your favourite TV shows?"</h3>
           <div class="question-btn">
-            <input type="text" class="input-question" id="question-2" />
-            <button id="edit-btn2" class="edit-btn hide"><i
+            <input type="text" class="input-question" id="question-2" value="{{ answers.[1].answer }}" />
+            <button id="edit-btn2" class="edit-btn" hidden><i
                 class="fa-solid fa-pen-to-square"
               ></i></button>
           </div>
@@ -61,8 +61,8 @@
         <div class="question-box">
           <h3 class="question-title">What is your favorite music genre?</h3>
           <div class="question-btn">
-            <input type="text" class="input-question" id="question-3" />
-            <button id="edit-btn3" class="edit-btn hide"><i
+            <input type="text" class="input-question" id="question-3" value="{{ answers.[2].answer }}" />
+            <button id="edit-btn3" class="edit-btn" hidden><i
                 class="fa-solid fa-pen-to-square"
               ></i></button>
           </div>
@@ -72,8 +72,8 @@
         <div class="question-box">
           <h3 class="question-title">What is a BIG NO on the first date?</h3>
           <div class="question-btn">
-            <input type="text" class="input-question" id="question-4" />
-            <button id="edit-btn4" class="edit-btn hide"><i
+            <input type="text" class="input-question" id="question-4" value="{{ answers.[3].answer }}" />
+            <button id="edit-btn4" class="edit-btn" hidden><i
                 class="fa-solid fa-pen-to-square"
               ></i></button>
           </div>
@@ -84,8 +84,8 @@
           <h3 class="question-title">What is one activity that you would like to
             do on a date?</h3>
           <div class="question-btn">
-            <input type="text" class="input-question" id="question-5" />
-            <button id="edit-btn5" class="edit-btn hide"><i
+            <input type="text" class="input-question" id="question-5" value="{{ answers.[4].answer }}" />
+            <button id="edit-btn5" class="edit-btn" hidden><i
                 class="fa-solid fa-pen-to-square"
               ></i></button>
           </div>
@@ -95,8 +95,8 @@
         <div class="question-box">
           <h3 class="question-title">How do you define your personality?</h3>
           <div class="question-btn">
-            <input type="text" class="input-question" id="question-6" />
-            <button id="edit-btn6" class="edit-btn hide"><i
+            <input type="text" class="input-question" id="question-6" value="{{ answers.[5].answer }}" />
+            <button id="edit-btn6" class="edit-btn" hidden><i
                 class="fa-solid fa-pen-to-square"
               ></i></button>
           </div>
@@ -106,8 +106,8 @@
         <div class="question-box">
           <h3 class="question-title">What is your sign?</h3>
           <div class="question-btn">
-            <input type="text" class="input-question" id="question-7" />
-            <button id="edit-btn7" class="edit-btn hide"><i
+            <input type="text" class="input-question" id="question-7" value="{{ answers.[6].answer }}" />
+            <button id="edit-btn7" class="edit-btn" hidden><i
                 class="fa-solid fa-pen-to-square"
               ></i></button>
           </div>
@@ -117,8 +117,8 @@
         <div class="question-box">
           <h3 class="question-title">What is your current occupation?</h3>
           <div class="question-btn">
-            <input type="text" class="input-question" id="question-8" />
-            <button id="edit-btn8" class="edit-btn hide"><i
+            <input type="text" class="input-question" id="question-8" value="{{ answers.[7].answer }}" />
+            <button id="edit-btn8" class="edit-btn" hidden><i
                 class="fa-solid fa-pen-to-square"
               ></i></button>
           </div>
@@ -128,8 +128,8 @@
         <div class="question-box">
           <h3 class="question-title">What is your best quality?</h3>
           <div class="question-btn">
-            <input type="text" class="input-question" id="question-9" />
-            <button id="edit-btn9" class="edit-btn hide"><i
+            <input type="text" class="input-question" id="question-9" value="{{ answers.[8].answer }}" />
+            <button id="edit-btn9" class="edit-btn" hidden><i
                 class="fa-solid fa-pen-to-square"
               ></i></button>
           </div>
@@ -140,8 +140,8 @@
           <h3 class="question-title">"What are you looking for in a
             relationship?</h3>
           <div class="question-btn">
-            <input type="text" class="input-question" id="question-10" />
-            <button id="edit-btn10" class="edit-btn hide"><i
+            <input type="text" class="input-question" id="question-10" value="{{ answers.[9].answer }}" />
+            <button id="edit-btn10" class="edit-btn" hidden><i
                 class="fa-solid fa-pen-to-square"
               ></i></button>
           </div>

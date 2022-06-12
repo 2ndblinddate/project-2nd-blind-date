@@ -54,6 +54,14 @@ const answerData = [
   },
 ];
 
-const seedAnswers = () => Answer.bulkCreate(answerData);
+module.exports = async () => {
+  for (let i = 1; i <= 8; i++) {
+    const dataForUserI = [...answerData].map((answer) => {
+      answer.user_id = i;
 
-module.exports = seedAnswers;
+      return answer;
+    });
+
+    await Answer.bulkCreate(dataForUserI);
+  }
+};
