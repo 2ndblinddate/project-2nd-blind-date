@@ -17,7 +17,7 @@ User.init(
       primaryKey: true,
       autoIncrement: true,
     },
-  
+
     email: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -36,6 +36,26 @@ User.init(
       validate: {
         len: [4],
       },
+    },
+
+    username: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+
+    age: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
+
+    gender: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+
+    sexual_orientation: {
+      type: DataTypes.STRING,
+      allowNull: true,
     },
   },
   {

@@ -12,6 +12,50 @@ router.get("/", (req, res) => {
     });
 });
 
+router.post("/:id/updateProfile", async (req, res) => {
+  try {
+  await User.update({
+    username: req.body.username,
+    age: req.body.age,
+    gender: req.body.gender,
+    sexOrientation: req.body.sexOrientation,
+  },
+  {
+    where: { id: req.params.id }
+  });
+
+  res.status(200);
+  res.send("ok");
+} catch (err) {
+  console.log(err);
+  res.status(500).json(err);
+}
+});
+
+router.post("/:id/updateAnswers", async (req, res) => {
+  try {
+    for await (const [index, answer] of req.body.entries()) {
+      await Answer.upsert({
+        question_id: index,
+        user_id: req.params.id,
+        answer
+      },
+      {
+        where: { 
+          question_id: index,
+          user_id: req.params.id
+        }
+      });
+    }
+
+    res.status(200);
+    res.send("ok");
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 router.get("/:id", (req, res) => {
   User.findOne({
     attributes: { exclude: ["password"] },
@@ -141,4 +185,5 @@ router.post('/logout', (req,res)=> {
   }
 
 });
+
 module.exports = router;

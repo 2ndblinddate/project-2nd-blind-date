@@ -1,18 +1,21 @@
-profileTitle = document.querySelector(".p-title");
-editBtn1 = document.querySelector("#edit-btn1");
-editBtn2 = document.querySelector("#edit-btn2");
-editBtn3 = document.querySelector("#edit-btn3");
-editBtn4 = document.querySelector("#edit-btn4");
-editBtn5 = document.querySelector("#edit-btn5");
-editBtn6 = document.querySelector("#edit-btn6");
-editBtn7 = document.querySelector("#edit-btn7");
-editBtn8 = document.querySelector("#edit-btn8");
-editBtn9 = document.querySelector("#edit-btn9");
-editBtn10 = document.querySelector("#edit-btn10");
-editBtn11 = document.querySelector("#edit-btn11");
-saveBtn = document.querySelector("#save-btn");
+const profileTitle = document.querySelector(".p-title");
+const editBtn1 = document.querySelector("#edit-btn1");
+const editBtn2 = document.querySelector("#edit-btn2");
+const editBtn3 = document.querySelector("#edit-btn3");
+const editBtn4 = document.querySelector("#edit-btn4");
+const editBtn5 = document.querySelector("#edit-btn5");
+const editBtn6 = document.querySelector("#edit-btn6");
+const editBtn7 = document.querySelector("#edit-btn7");
+const editBtn8 = document.querySelector("#edit-btn8");
+const editBtn9 = document.querySelector("#edit-btn9");
+const editBtn10 = document.querySelector("#edit-btn10");
+const editBtn11 = document.querySelector("#edit-btn11");
+const saveBtn = document.querySelector("#save-btn");
 
-saveBtn.addEventListener("click", function(){
+saveBtn.addEventListener("click", async (evt) => {
+
+    evt.preventDefault();
+
     editBtn1.removeAttribute("class", "hide");
     editBtn2.removeAttribute("class", "hide");
     editBtn3.removeAttribute("class", "hide");
@@ -25,8 +28,34 @@ saveBtn.addEventListener("click", function(){
     editBtn10.removeAttribute("class", "hide");
     editBtn11.removeAttribute("class", "hide");
     profileTitle.style.display ="none";
-    saveBtn.setAttribute("class", "hide")
-   
+    saveBtn.setAttribute("class", "hide");
+    
+    const id = document.querySelector("#userId").value.trim();
+
+    
+    const response = await fetch(`/api/users/${id}/updateAnswers`, {
+        method: 'post',
+        body: JSON.stringify([
+            document.querySelector('#question-1').value.trim(),
+            document.querySelector('#question-2').value.trim(),
+            document.querySelector('#question-3').value.trim(),
+            document.querySelector('#question-4').value.trim(),
+            document.querySelector('#question-5').value.trim(),
+            document.querySelector('#question-6').value.trim(),
+            document.querySelector('#question-7').value.trim(),
+            document.querySelector('#question-8').value.trim(),
+            document.querySelector('#question-9').value.trim(),
+            document.querySelector('#question-10').value.trim(),
+            document.querySelector('#question-11').value.trim()
+        ]),
+        headers: { 'Content-Type': 'application/json' }
+    });
+
+    if (response.ok) {
+        document.location.replace('/myprofile');
+    } else {
+        alert("error");
+    }
 })
 
 editBtn1.addEventListener("click", function(){
