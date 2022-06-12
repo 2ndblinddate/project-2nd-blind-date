@@ -10,7 +10,7 @@ Match.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    user_id_a: {
+    user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
@@ -18,17 +18,18 @@ Match.init(
         key: "id",
       },
     },
-    user_id_b: {
+    user_match: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: "user",
         key: "id",
-      },
+      }
     },
   },
   {
     sequelize,
+    timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: "match",

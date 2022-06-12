@@ -6,7 +6,7 @@
 
 body{
     font-style: var(--general);
-    background: url(/assets/imgs/backgroundBlurred.png) no-repeat center center fixed; 
+    background: url(/public/assets/imgs/backgroundBlurred.png) no-repeat center center fixed; 
 }
 /*Containers*/
 .wrapper{
@@ -182,9 +182,7 @@ body{
     }
   }
 
-.hide{
-    display: none;
-}
+
 
 .choices{
     display: grid;
@@ -214,3 +212,26 @@ body{
     background: linear-gradient(to right, #f1375c, #ef6e5a);
 }
 
+.hide{
+    display: none;
+}
+
+@media (max-width: 913px){
+    .main{
+        width: 80%;
+    }
+
+    #proceed-btn{
+        padding-top: 18px;
+
+    }
+
+    #proceed{
+        font-size: 12px;
+    }
+        
+    .title h1{
+        font-size: 19px;
+        letter-spacing: 3px;
+    }
+}

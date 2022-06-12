@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Match } = require("../../models");
+const { Match, User } = require("../../models");
 
 // get all matches
 router.get("/", (req, res) => {
@@ -9,14 +9,15 @@ router.get("/", (req, res) => {
       console.log(err);
       res.status(500).json(err);
     });
+    res.render("matches");
 });
 
 // create a match
 router.post("/", (req, res) => {
   // expects => {"user_id_a": 1, "user_id_b": 2}
   Match.create({
-    user_id_a: req.body.user_id_a,
-    user_id_b: req.body.user_id_b,
+    user_id: req.body.user_id,
+    user_match: req.body.user_match,
   })
     .then((dbMatchData) => res.json(dbMatchData))
     .catch((err) => {
