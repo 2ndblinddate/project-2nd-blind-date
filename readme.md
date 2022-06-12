@@ -35,3 +35,6 @@ Project proposal and Powerpoint Presentation can be found in the Documentation f
 
 ## License
 ISC
+
+## Documents
+[2nd Blind Date.pdf](https://github.com/2ndblinddate/project-2nd-blind-date/files/8885145/2nd.Blind.Date.pdf)
