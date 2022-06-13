@@ -30,7 +30,7 @@ We tried balancing personal and work live to meet up and work on the project tog
 Project proposal and Powerpoint Presentation can be found in the Documentation folder on the repository.
 
 ## Screenshots of the Signup Page
-![Signup Page](https://user-images.githubusercontent.com/98847835/173214420-cacdfe90-b8b5-4225-8208-c46cd80e1275.jpg)
+![Login page](https://user-images.githubusercontent.com/98847835/173261832-024ea6ae-7ca1-4bd9-b593-fe9ba71d074a.jpg)
 
 
 ## Screenshot of Login page
