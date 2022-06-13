@@ -1,6 +1,5 @@
 const router = require("express").Router();
 const { User, Answer, Match } = require("../../models");
-const { update } = require("../../models/User");
 
 router.get("/", (req, res) => {
   User.findAll({

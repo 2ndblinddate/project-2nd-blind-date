@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Match, User } = require("../../models");
+const { Match } = require("../../models");
 
 // get all matches
 router.get("/", (req, res) => {
