@@ -1,8 +1,12 @@
 {
   "name": "project-2nd-blind-date",
   "version": "1.0.0",
+  "engines": {
+    "node": "16.14.2"
+  },
   "description": "Hello all",
   "main": "server.js",
+
   "scripts": {
     "devStart": "nodemon server.js",
     "seed": "node seeds/index.js"
