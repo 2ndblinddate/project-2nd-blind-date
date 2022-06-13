@@ -37,12 +37,12 @@ body{
 
 
 /*title and logo*/
-.title{
+.title-login{
     display: flex;
     align-items: center;
 }
 
-.title h1{
+.title-login h1{
     color: #CB2926;
     font-size: 25px;
     padding-left: 30px;
@@ -51,7 +51,7 @@ body{
     font-family: 'Prata', serif;
 }
 
-.title img{
+.title-login img{
     width: 50px !important;
     padding: 0 !important;
 }
@@ -306,7 +306,7 @@ body{
         font-size: 15px;
     }
 
-    .title{
+    .title-login{
         width: 100%;
     }
 
@@ -348,11 +348,11 @@ body{
        flex-direction: column;
     }
 
-    .sub-title{
+    .sub-title-login{
         display: none;
     }
 
-    .search-title{
+    .search-title-login{
         display: none;
     }
   }
