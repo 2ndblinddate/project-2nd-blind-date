@@ -1,0 +1,42 @@
+ <main>
+        <div class="container">
+            <!--Filter users-->
+            <!-- <div id="search-container">
+                <h2 class="sub-title">Filter users</h2>
+                <p class="search-title">Search users that matches what you are looking for.</p>
+                <div id="error-message"></div>
+                <form class="search-form">
+                    <input type="text"  id="filter-users" class="filter-input">
+                    <button type="button" id="search-btn" class="search-btn"><i class="fa-solid fa-magnifying-glass" ></i></button>
+                </form>
+            </div> -->
+
+            <!--Users boxes-->
+            {{#each users}}
+                <div id="box-1" class="boxes">
+                    <!--Image-->
+                        <div class="img-container">
+                            <img src="/assets/imgs/blinddateicon1.jpg">
+                        </div>
+                    <!--Informations-->
+                    <div class="sub-box">
+                        <h3 class="user-name">{{username}}</h3>
+                        <div class="user-info">
+                            <p>{{age}}</p>
+                        </div>
+
+                        <div class="user-phrase">
+                            <p>I love the geek world, I love pets and I want someone nerd as I am.</p>
+                        </div>
+                    </div>
+                    <!--Buttons-->
+                    <div class="btn-box">
+                        
+                        <a href="/users/{{id}}" id="profile-btn"><i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div> 
+             {{/each}}
+        </div>
+</main>
+
+<script src="/javascript/cards.js"></script>

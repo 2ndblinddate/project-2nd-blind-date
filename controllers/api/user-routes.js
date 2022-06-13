@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { User, Answer, Match } = require("../../models");
+const { update } = require("../../models/User");
 
 router.get("/", (req, res) => {
   User.findAll({
@@ -10,6 +11,63 @@ router.get("/", (req, res) => {
       console.log(err);
       res.status(500).json(err);
     });
+});
+
+router.post("/:id/updateProfile", async (req, res) => {
+  try {
+    await User.update({
+      username: req.body.username,
+      age: req.body.age,
+      gender: req.body.gender,
+      sexual_orientation: req.body.sexual_orientation,
+    },
+    {
+      where: { id: req.params.id }
+    });
+
+    res.status(200);
+    res.send("ok");
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+router.post("/:id/updateAnswers", async (req, res) => {
+  try {
+    for await (const [index, answer] of req.body.entries()) {
+      const dbAnswer = await Answer.findOne({
+        where: { 
+          question_id: index,
+          user_id: req.params.id
+        }
+      });
+
+      if (dbAnswer) {
+        await Answer.update({
+          answer
+        },
+        {
+          where: { 
+            question_id: index,
+            user_id: req.params.id
+          }
+        });
+      } else {
+        await Answer.create({
+          question_id: index,
+          user_id: req.params.id,
+          answer
+        })
+      }
+    }
+
+    res.status(200);
+    res.send("ok");
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
 router.get("/:id", (req, res) => {
@@ -42,25 +100,18 @@ router.get("/:id", (req, res) => {
     });
 });
 
-router.post("/", (req, res) => {
-  User.create({
+router.post("/", async (req, res) => {
+  try {
+    const dbUserInfo = await User.create({
+      email: req.body.email,
+      password: req.body.password,
+    });
 
-    email: req.body.email,
-    password: req.body.password,
-  })
-    .then((dbUserInfo) => {
-      req.session.save(() => {
-        req.session.user = dbUserInfo.id;
-        req.session.email= dbUserInfo.email;
-        req.session.loggedIn = true;
-    
-      res.json(dbUserInfo);
-    });
-  })
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
-    });
+    res.json(dbUserInfo);
+  } catch(err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
 router.post("/login", (req, res) => {
@@ -141,4 +192,5 @@ router.post('/logout', (req,res)=> {
   }
 
 });
+
 module.exports = router;
