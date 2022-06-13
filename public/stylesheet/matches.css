@@ -8,13 +8,15 @@
     border-radius: 20px;
     background-color: rgb(76, 71, 71);
     height: 500px;
+    overflow: auto;
 }
 
 .matches-cont h2{
     font-size: 30px;
     padding-top: 20px;
-    
-    
+    position: sticky;
+    top: 0;
+    background: linear-gradient(to bottom, black 80%, transparent);
 }
 
 
@@ -52,7 +54,7 @@
 }
 
 .fa-heart{
-   
+    color: red;
     font-size: 25px;
 }
 

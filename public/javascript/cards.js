@@ -15,30 +15,3 @@ deleteBtn6 = document.querySelector("#delete-btn6");
 deleteBtn7 = document.querySelector("#delete-btn7");
 
 
-deleteBtn1.addEventListener("click", function(){
-    box1.style.display = "none"
-})
-
-deleteBtn2.addEventListener("click", function(){
-    box2.style.display = "none"
-})
-
-deleteBtn3.addEventListener("click", function(){
-    box3.style.display = "none"
-})
-
-deleteBtn4.addEventListener("click", function(){
-    box4.style.display = "none"
-})
-
-deleteBtn5.addEventListener("click", function(){
-    box5.style.display = "none"
-})
-
-deleteBtn6.addEventListener("click", function(){
-    box6.style.display = "none"
-})
-
-deleteBtn7.addEventListener("click", function(){
-    box7.style.display = "none"
-})

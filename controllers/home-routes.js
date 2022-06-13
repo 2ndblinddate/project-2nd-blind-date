@@ -7,6 +7,11 @@ router.get("/", (req, res) => {
 });
 
 router.get("/explore", async (req, res) => {
+  if (!req.session.loggedIn) {
+    res.redirect("/login");
+    return;
+  }
+  
   try {
     const dbUserInfo = await User.findAll({});
 
@@ -95,6 +100,11 @@ router.get("/login", async (req, res) => {
 });
 
 router.get("/signup", (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect("/home");
+    return;
+  }
+
   res.render("signup", { layout: false });
 });
 
