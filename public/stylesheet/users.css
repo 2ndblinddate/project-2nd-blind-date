@@ -10,6 +10,9 @@
    background-color: transparent;
    cursor: pointer;
 }
+
+
+
 .fa-hreat{
     font-size: 27px;
     z-index: 2;
@@ -17,13 +20,22 @@
     border: 2px rgb(18, 91, 98) solid;
 }
 
+.is-matched{
+    color: red;
+}
 
 .profile-bg{
-    transform: translate(0, -120px)
+    transform: translate(0, -70px);
+    background-color: black;
+    width: 70%;
+    height: 293px;
+    border-radius: 100px;
+    margin: 0 auto -100px;
+    transform: translate(0, -90px);
 }
 
 .questions-wrapper{
-    transform: translate(0, -230px);
+    transform: translate(0, -190px);
     padding-top: 20px;
 }
 
@@ -84,4 +96,9 @@
         
     
 }
+
+.profile-user {
+    padding-top: 120px;
+}
+
 

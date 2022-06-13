@@ -1,0 +1,127 @@
+<main id="profile-container">
+  <section class="section-title">
+    <div>
+      <div class="profile profile-user">
+        <img src="/assets/imgs/profilephoto.jpg" />
+        <div class="match-container">
+          {{#if loggedUserId }}
+            {{#if isMatched }}
+              <button id="match-btn" class="match-btn is-matched"><i class="fa-solid fa-heart" id="heart-i"></i></button>
+            {{else}}
+              <button id="match-btn" class="match-btn"><i class="fa-solid fa-heart" id="heart-i"></i></button>
+            {{/if}}
+          {{/if}}
+        </div>
+        <div class="profile-bg">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <input type="hidden" id="userId" value="{{ loggedUserId }}" />
+  <input type="hidden" id="matchId" value="{{ user.id }}" />
+
+  <div class="questions-wrapper">
+    <div class="basic-info">
+      <input type="hidden" id="userId" value="{{ user.id }}" />
+      <h3>Username: <span>{{ user.username }}</span></h3>
+      <h3>Age: <span>{{ user.age }}</span></h3>
+      <h3>Gender: <span> {{ user.gender }}</span></h3>
+      <h3>Sexual Orientation: <span> {{ user.sexual_orientation }}</span></h3>
+    </div>
+    <div class="cont">
+      <!--First impression phrase-->
+      <div class="question-box phrase">
+        <h3 class="question-title">First impression phrase: </h3>
+        <div class="question-btn">
+          <input type="text" class="input-question" disabled id="question-11" value="{{ answers.[10].answer }}" />
+        </div>
+      </div>
+      <section id="questions" class="questions-container">
+
+        <!--Question1-->
+        <div class="question-box">
+          <h3>What do you most love to do in your free time?</h3>
+          <div class="question-btn">
+            <input type="text" class="input-question" disabled id="question-1" value="{{ answers.[0].answer }}" />
+          </div>
+        </div>
+
+        <!--Question2-->
+        <div class="question-box">
+          <h3>"What are your favourite TV shows?"</h3>
+          <div class="question-btn">
+            <input type="text" class="input-question" disabled id="question-2" value="{{ answers.[1].answer }}" />
+          </div>
+        </div>
+
+        <!--Question3-->
+        <div class="question-box">
+          <h3 class="question-title">What is your favorite music genre?</h3>
+          <div class="question-btn">
+            <input type="text" class="input-question" disabled id="question-3" value="{{ answers.[2].answer }}" />
+          </div>
+        </div>
+
+        <!--Question4-->
+        <div class="question-box">
+          <h3 class="question-title">What is a BIG NO on the first date?</h3>
+          <div class="question-btn">
+            <input type="text" class="input-question" disabled id="question-4" value="{{ answers.[3].answer }}" />
+          </div>
+        </div>
+
+        <!--Question5-->
+        <div class="question-box">
+          <h3 class="question-title">What is one activity that you would like to
+            do on a date?</h3>
+          <div class="question-btn">
+            <input type="text" class="input-question" disabled id="question-5" value="{{ answers.[4].answer }}" />
+          </div>
+        </div>
+
+        <!--Question6-->
+        <div class="question-box">
+          <h3 class="question-title">How do you define your personality?</h3>
+          <div class="question-btn">
+            <input type="text" class="input-question" disabled id="question-6" value="{{ answers.[5].answer }}" />
+          </div>
+        </div>
+
+        <!--Question7-->
+        <div class="question-box">
+          <h3 class="question-title">What is your sign?</h3>
+          <div class="question-btn">
+            <input type="text" class="input-question" disabled id="question-7" value="{{ answers.[6].answer }}" />
+          </div>
+        </div>
+
+        <!--Question8-->
+        <div class="question-box">
+          <h3 class="question-title">What is your current occupation?</h3>
+          <div class="question-btn">
+            <input type="text" class="input-question" disabled id="question-8" value="{{ answers.[7].answer }}" />
+          </div>
+        </div>
+
+        <!--Question9-->
+        <div class="question-box">
+          <h3 class="question-title">What is your best quality?</h3>
+          <div class="question-btn">
+            <input type="text" class="input-question" disabled id="question-9" value="{{ answers.[8].answer }}" />
+          </div>
+        </div>
+
+        <!--Question10-->
+        <div class="question-box">
+          <h3 class="question-title">"What are you looking for in a
+            relationship?</h3>
+          <div class="question-btn">
+            <input type="text" class="input-question" disabled id="question-10" value="{{ answers.[9].answer }}" />
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+<script src="/javascript/matches.js"></script>
+</main>

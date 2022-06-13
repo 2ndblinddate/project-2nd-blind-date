@@ -13,18 +13,10 @@ Answer.init(
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      references: {
-        model: "user",
-        key: "id",
-      },
     },
     question_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      references: {
-        model: "question",
-        key: "id",
-      },
     },
     answer: {
       type: DataTypes.STRING,
