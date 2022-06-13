@@ -52,7 +52,8 @@ body{
 }
 
 .title img{
-    width: 50px;
+    width: 50px !important;
+    padding: 0 !important;
 }
 
 .links li {

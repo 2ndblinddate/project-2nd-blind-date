@@ -1,8 +1,9 @@
 <main>
        <div class="matches-cont">
            <h2> Your matches:</h2>
-                <div class="match-box">
-                    </h3><a href="user1.html">SarahLohan12</a></h3>
+            {{#each matches}}
+             <div class="match-box">
+                    </h3><a href="user1.html"> {{ username }}</a></h3>
                     <i class="fa-solid fa-heart"></i>
                 </div>
                 <div class="message-box">
@@ -11,5 +12,6 @@
                </div>
                 
                 <div class="line"></div>
+            {{/each}}
        </div>
 </main>

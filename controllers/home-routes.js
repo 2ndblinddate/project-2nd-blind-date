@@ -8,9 +8,7 @@ router.get("/", (req, res) => {
 
 router.get("/explore", async (req, res) => {
   try {
-    const dbUserInfo = await User.findAll({
-      attributes: ["id", "email"],
-    });
+    const dbUserInfo = await User.findAll({});
 
     const users = dbUserInfo.map((user) => user.get({ plain: true }));
     res.render("home", {
@@ -93,11 +91,65 @@ router.get("/login", async (req, res) => {
     return;
   }
 
-  res.render("login");
+  res.render("login", { layout: false });
 });
 
 router.get("/signup", (req, res) => {
-  res.render("signup");
+  res.render("signup", { layout: false });
+});
+
+router.get("/users/:id", async (req, res) => {
+  const user = await User.findOne({
+    where: {
+      id: req.params.id
+    },
+  });
+
+  const answers = await Answer.findAll({
+    where: {
+      user_id: req.params.id,
+    }
+  });
+
+  let isMatched = false;
+
+  if (req.session.loggedIn) {
+    let match = await Match.findOne({
+      where: {
+        user_id: req.session.user,
+        user_match: req.params.id
+      }
+    });
+
+    if (match) {
+      isMatched = true;
+    }
+  }
+
+  res.render("profile", {
+    loggedUserId: req?.session?.user ?? '',
+    user: user.get({ plain: true }),
+    answers: answers.map((answer) => answer.get({ plain: true })).sort((a, b) => a.question_id - b.question_id),
+    isMatched
+  });
+});
+
+router.get("/matches", async (req, res) => {
+  if (!req.session.loggedIn) {
+    res.redirect("login")
+  }
+
+  const matches = await Match.findAll({
+    where: {
+      user_id: req.session.user
+    }
+  });
+
+  const matchedUsers = await Promise.all(matches.map((match) => User.findOne({ where: { id: match.user_match }})));
+
+  res.render("matches", {
+    matches: matchedUsers.map((user) => user.get({ plain: true }))
+  });
 });
 
 module.exports = router;

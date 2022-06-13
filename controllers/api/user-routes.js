@@ -100,25 +100,18 @@ router.get("/:id", (req, res) => {
     });
 });
 
-router.post("/", (req, res) => {
-  User.create({
+router.post("/", async (req, res) => {
+  try {
+    const dbUserInfo = await User.create({
+      email: req.body.email,
+      password: req.body.password,
+    });
 
-    email: req.body.email,
-    password: req.body.password,
-  })
-    .then((dbUserInfo) => {
-      req.session.save(() => {
-        req.session.user = dbUserInfo.id;
-        req.session.email= dbUserInfo.email;
-        req.session.loggedIn = true;
-    
-      res.json(dbUserInfo);
-    });
-  })
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
-    });
+    res.json(dbUserInfo);
+  } catch(err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
 router.post("/login", (req, res) => {

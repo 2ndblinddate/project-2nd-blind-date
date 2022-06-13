@@ -1,5 +1,3 @@
-const seedMatches = require("./match-seeds");
-
 const seedAll = async () => {
   const sequelize = require("../config/connection");
   
@@ -7,9 +5,7 @@ const seedAll = async () => {
   
   await require("./user-seeds")();
   await require("./answer-seeds")();
-
-  await seedMatches();
-  console.log("\n----- MATCHES SEEDED -----\n");
+  await require("./match-seeds")();
 
   process.exit(0);
 };
