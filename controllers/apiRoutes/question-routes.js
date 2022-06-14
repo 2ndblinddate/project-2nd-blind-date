@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const { Question } = require("../../models");
 
-// get all questions
+// get all questionss
 router.get("/", (req, res) => {
   Question.findAll()
     .then((dbQuestionData) => res.json(dbQuestionData))
