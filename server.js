@@ -5,8 +5,10 @@ const session = require("express-session");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 require("dotenv").config();
 
+
 const app = express();
 const PORT = process.env.PORT || 8080;
+
 
 const sequelize = require("./config/connection");
 const sess = {
