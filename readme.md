@@ -29,29 +29,26 @@ We tried balancing personal and work live to meet up and work on the project tog
 ## Documentation
 Project proposal and Powerpoint Presentation can be found in the Documentation folder on the repository.
 
-## Screenshots of the Signup Page
-![Signup Page](https://user-images.githubusercontent.com/98847835/173214420-cacdfe90-b8b5-4225-8208-c46cd80e1275.jpg)
+## Screenshots of the Login Page
+![Login page](https://user-images.githubusercontent.com/98847835/173261832-024ea6ae-7ca1-4bd9-b593-fe9ba71d074a.jpg)
 
 
-## Screenshot of Login page
-![Login page](https://user-images.githubusercontent.com/98847835/173214426-f66ecf73-6f48-4986-8f0b-3d305f46bc85.jpg)
+## Screenshot of Signup page
+![Signup Page](https://user-images.githubusercontent.com/98847835/173264467-91b012fe-75d0-474c-ac59-32293e0e3316.jpg)
 
 
 ## Screenshot of Create profile
-![Create profile](https://user-images.githubusercontent.com/98847835/173214434-04179f53-77f1-4b85-9dc6-7b7e3364ae83.jpg)
+![Create profile](https://user-images.githubusercontent.com/98847835/173264475-ed43882a-1b05-43b1-9034-1ae233e61be4.jpg)
+
+
 
 
 ## Screenshot of Questions
-![Questions](https://user-images.githubusercontent.com/98847835/173214444-5f8490e2-8e85-48d1-a7aa-902731619618.jpg)
+![Questions](https://user-images.githubusercontent.com/98847835/173264502-e53c3815-33b8-4e77-9d3e-46c9edce8e81.jpg)
 
 
 ## Screenshot of Users
-![Users page](https://user-images.githubusercontent.com/98847835/173214450-5b409f70-3317-46d2-a8aa-fdd65a5b2e17.jpg)
-
-
-## Screenshot of Answers page
-![Answers](https://user-images.githubusercontent.com/98847835/173214453-3ff41e22-05d3-4a24-abcf-00d2798af7bb.jpg)
-
+![Users page](https://user-images.githubusercontent.com/98847835/173264520-c2f745d5-f979-484e-a8b2-e8e2f320ebdf.jpg)
 
 
 ## Contributes
@@ -64,4 +61,5 @@ Project proposal and Powerpoint Presentation can be found in the Documentation f
 
 ## Documents
 [2nd Blind Date.pdf](https://github.com/2ndblinddate/project-2nd-blind-date/files/8885145/2nd.Blind.Date.pdf)
+[2nd-blind-date Project-Proposal.docx](https://github.com/2ndblinddate/project-2nd-blind-date/files/8887276/2nd-blind-date.Project-Proposal.docx)
 
